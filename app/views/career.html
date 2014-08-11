@@ -1,0 +1,4 @@
+<h1 ng-bind='career.name'></h1>
+<p ng-bind-template='Entry Rate: {{career.entry_rate.currency.symbol}}{{career.entry_rate.fractional /100}}'></p>
+<rating ng-model='career.rating' max="10" readonly='true' on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+<p ng-bind='career.desc'></p>
