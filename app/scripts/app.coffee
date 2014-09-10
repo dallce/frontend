@@ -2,14 +2,14 @@
 
 ###*
  # @ngdoc overview
- # @name client2App
+ # @name dallceApp
  # @description
- # # client2App
+ # # dallceApp
  #
  # Main module of the application.
 ###
 angular
-  .module 'client2App', [
+  .module 'dallceApp', [
     'ngAnimate'
     'ngCookies'
     'ngStorage'
@@ -18,18 +18,20 @@ angular
     'ngTouch'
     'ui.bootstrap'
     'restangular'
+    'Satellizer'
   ]
   .config [
     '$urlRouterProvider'
     '$stateProvider'
     '$locationProvider'
     'RestangularProvider'
-    ($urlRouterProvider, $stateProvider, $locationProvider, RestangularProvider) ->
-      # $locationProvider
-      #   .html5Mode true
-      #   .hashPrefix '!'
+    'settings'
+    ($urlRouterProvider, $stateProvider, $locationProvider, RestangularProvider, settings) ->
+      $locationProvider
+        .html5Mode true
+        # .hashPrefix '!'
 
-      RestangularProvider.setBaseUrl('/api/v1')
+      RestangularProvider.setBaseUrl settings.apiUrl
 
       $urlRouterProvider.otherwise("/");
 

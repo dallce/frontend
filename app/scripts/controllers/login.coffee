@@ -2,12 +2,12 @@
 
 ###*
  # @ngdoc function
- # @name client2App.controller:LoginCtrl
+ # @name dallceApp.controller:LoginCtrl
  # @description
  # # LoginCtrl
- # Controller of the client2App
+ # Controller of the dallceApp
 ###
-angular.module('client2App')
+angular.module('dallceApp')
   .controller 'LoginCtrl', ['$scope', 'auth', ($scope, auth) ->
     $scope.user = auth.info()
     $scope.credentials = {}
@@ -19,7 +19,7 @@ angular.module('client2App')
 
   ]
 
-angular.module('client2App')
+angular.module('dallceApp')
   .controller 'SignUpCtrl', ['$scope', 'auth', ($scope, auth) ->
     $scope.user = auth.info()
     $scope.credentials = {}

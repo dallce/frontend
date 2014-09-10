@@ -2,13 +2,13 @@
 
 ###*
  # @ngdoc service
- # @name client2App.auth
+ # @name dallceApp.auth
  # @description
  # # auth
- # Factory in the client2App.
+ # Factory in the dallceApp.
 ###
-angular.module('client2App')
-  .factory 'auth', ['$localStorage', '$http', '$state', ($localStorage, $http, $state)->
+angular.module('dallceApp')
+  .factory 'auth', ['$localStorage', '$http', '$state', 'settings', ($localStorage, $http, $state, settings)->
     # Service logic
     # ...
 
@@ -21,7 +21,7 @@ angular.module('client2App')
     # Public API here
     {
       signIn: (user)->
-        $http.post('api/v1/auth/login', user)
+        $http.post(settings.apiUrl + '/auth/login', user)
         .success (data) ->
           $localStorage.currentUser.token = data.authentication_token
           $localStorage.currentUser.id = data.id
@@ -36,7 +36,7 @@ angular.module('client2App')
         $http.defaults.headers.common['Auth-Token'] = ''
 
       signUp: (user) ->
-        $http.post('api/v1/auth/signup', user)
+        $http.post(settings.apiUrl + '/auth/signup', user)
         .success (data) ->
           $localStorage.currentUser.token = data.authentication_token
           $localStorage.currentUser.id = data.id

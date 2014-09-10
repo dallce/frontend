@@ -2,11 +2,11 @@
 
 ###*
  # @ngdoc directive
- # @name client2App.directive:userPanel
+ # @name dallceApp.directive:userPanel
  # @description
  # # userPanel
 ###
-angular.module('client2App')
+angular.module('dallceApp')
   .directive('userPanel', ->
     templateUrl: 'views/user_panel.html'
     restrict: 'EA'
@@ -15,7 +15,7 @@ angular.module('client2App')
     controller: 'LoginCtrl'
   )
 
-angular.module('client2App')
+angular.module('dallceApp')
   .directive('dcMatch', ->
     restrict: "A"
     scope: true

@@ -2,12 +2,12 @@
 
 ###*
  # @ngdoc function
- # @name client2App.controller:AboutCtrl
+ # @name dallceApp.controller:AboutCtrl
  # @description
  # # AboutCtrl
- # Controller of the client2App
+ # Controller of the dallceApp
 ###
-angular.module('client2App')
+angular.module('dallceApp')
   .controller 'AboutCtrl', ['$scope', 'Restangular', ($scope, Restangular) ->
     $scope.baseCareers = Restangular.all('careers')
     $scope.careers = $scope.baseCareers.getList().$object
@@ -25,7 +25,7 @@ angular.module('client2App')
 
   ]
 
-angular.module('client2App')
+angular.module('dallceApp')
   .controller 'careerCtrl', [
     '$scope', 'Restangular', '$stateParams'
     ($scope, Restangular, $stateParams) ->
